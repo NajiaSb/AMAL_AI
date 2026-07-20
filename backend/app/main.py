@@ -10,7 +10,7 @@ app = FastAPI()
 
 # Add webapp URLS (React frontend, hosting URL, local URL)
 origins = [
-    "http://localhost:3000"
+    "http://localhost:5173"
 ]
 
 app.add_middleware(
@@ -37,6 +37,7 @@ async def chat(request: AmalChatRequest):
         return AmalChatResponse(answer=answer)
     # Except errors
     except Exception as e:
+        print("ERROR:", e)
         raise HTTPException(
             status_code=500,
             detail=f"Error generating response: {str(e)}"
