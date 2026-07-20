@@ -1,73 +1,139 @@
 .chat-page {
-    max-width: 900px;
-    margin: auto;
-    padding: 40px 20px;
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to right, #26333d, #323741, #21214e);
 }
 
-.chat-title {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.chat-window {
-    height: 600px;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+.chat-card {
+    width: 100%;
+    max-width: 750px;
+    height: 650px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 15px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
+
+
+.chat-header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: none;
+}
+
+
+.bot-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+
+.bot-status {
+    margin-left: 15px;
+    color: white;
+}
+
+
+.bot-status h3 {
+    margin: 0;
+}
+
+
+.bot-status p {
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+}
+
 
 .messages {
     flex: 1;
-    padding: 25px;
+    padding: 20px;
     overflow-y: auto;
+}
+
+
+.message {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    margin-bottom: 20px;
 }
 
-.user-message {
-    align-self: flex-end;
-    background: #1d6fa5;
-    color:white;
-    padding:15px 20px;
-    border-radius:20px 20px 0 20px;
-    max-width:70%;
+
+.message.user {
+    justify-content: flex-end;
 }
 
-.ai-message {
-    align-self:flex-start;
-    background:#f1f5f9;
-    padding:20px;
-    border-radius:20px 20px 20px 0;
-    max-width:70%;
+
+.message.ai {
+    justify-content: flex-start;
 }
+
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+
+.bubble {
+    padding: 12px 18px;
+    border-radius: 25px;
+    max-width: 70%;
+    margin: 0 10px;
+    color: white;
+}
+
+
+.user .bubble {
+    background: #58cc71;
+}
+
+
+.ai .bubble {
+    background: #52acff;
+}
+
+
+.bubble p {
+    margin: 5px 0;
+}
+
 
 .input-area {
-    display:flex;
-    padding:20px;
-    border-top:1px solid #e5e7eb;
-    gap:15px;
+    padding: 15px;
+    display: flex;
+    gap: 10px;
 }
+
 
 .input-area textarea {
-    flex:1;
-    height:60px;
-    resize:none;
-    border-radius:15px;
-    border:1px solid #d1d5db;
-    padding:15px;
+    flex: 1;
+    height: 60px;
+    resize: none;
+    background: rgba(0,0,0,0.3);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    padding: 15px;
 }
+
 
 .input-area button {
-    background:#1d6fa5;
-    color:white;
-    padding:0 25px;
-    border-radius:15px;
+    width: 60px;
+    border-radius: 15px;
+    background: rgba(0,0,0,0.3);
+    color: white;
+    border: none;
 }
 
-.loading {
-    color:#6b7280;
+
+.input-area button:hover {
+    background: rgba(255,255,255,0.2);
 }

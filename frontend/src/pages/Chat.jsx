@@ -1,105 +1,213 @@
 import { useState } from "react";
 import { sendMessage } from "../services/api";
+
 import { useLanguage } from "../components/LanguageContext";
 import { text } from "../translations";
+
 import "../styles/chat.css";
 
+
 function Chat() {
+
     const { language } = useLanguage();
     const t = text[language];
-    const [message, setMessage] = useState("");
-    const [answer, setAnswer] = useState(null);
-    const [previousMessage, setPreviousMessage] = useState("");
-    const [loading, setLoading] = useState(false);
 
-    async function handleSubmit(e) {
-        e.preventDefault();
-        if (!message.trim()) {
-            return;
+
+    const [messages,setMessages] = useState([
+        {
+            sender:"ai",
+            text:t.welcomeMessage
         }
+    ]);
 
-        setPreviousMessage(message);
+
+    const [message,setMessage] = useState("");
+
+    const [loading,setLoading] = useState(false);
+
+
+
+    async function handleSubmit(e){
+
+        e.preventDefault();
+
+        if(!message.trim()) return;
+
+
+        setMessages(prev=>[
+            ...prev,
+            {
+                sender:"user",
+                text:message
+            }
+        ]);
+
+
+        setMessage("");
+
         setLoading(true);
 
-        const response = await sendMessage(message);
-        setAnswer(response.answer);
+
+        try{
+
+            const response = await sendMessage(message);
+
+
+            setMessages(prev=>[
+                ...prev,
+                {
+                    sender:"ai",
+                    text:response.answer
+                }
+            ]);
+
+        }
+
+        catch(error){
+
+            console.log(error);
+
+        }
+
+
         setLoading(false);
+
     }
 
+
+
     return (
+
         <div className="chat-page">
-            <div className="chat-title">
 
-                <h1>
-                    {t.chatTitle}
-                </h1>
+            <div className="chat-card">
 
-            </div>
-            <div className="chat-box">
-                <div className="message-area">
+
+                <div className="chat-header">
+
+                    <img
+                        className="bot-image"
+                        src="https://cdn-icons-png.flaticon.com/512/387/387569.png"
+                    />
+
+
+                    <div className="bot-status">
+
+                        <h3>
+                            AMAL AI
+                        </h3>
+
+                        <p>
+                            {t.chatSubtitle}
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div className="messages">
+
+
                     {
-                        previousMessage &&
-                        <div className="user-message">
-                            {previousMessage}
-                        </div>
+                        messages.map((msg,index)=>(
 
+                            <div
+                                key={index}
+                                className={`message ${msg.sender}`}
+                            >
+
+
+                                {
+                                    msg.sender==="ai" &&
+                                    <img
+                                        className="avatar"
+                                        src="https://cdn-icons-png.flaticon.com/512/387/387569.png"
+                                    />
+                                }
+
+
+                                <div className="bubble">
+
+
+                                    {
+                                        typeof msg.text==="object"
+                                        ?
+
+                                        <>
+                                            <p>
+                                                <b>{t.urgency}:</b> {msg.text.Urgency}
+                                            </p>
+
+                                            <p>
+                                                <b>{t.reason}:</b> {msg.text.Reason}
+                                            </p>
+
+                                            <p>
+                                                <b>{t.action}:</b> {msg.text.Action}
+                                            </p>
+                                        </>
+
+                                        :
+
+                                        <p>
+                                            {msg.text}
+                                        </p>
+                                    }
+
+
+                                </div>
+
+
+                            </div>
+
+                        ))
                     }
+
+
                     {
                         loading &&
-                        <div className="ai-response loading">
-                            {t.thinking}
-                        </div>
-
-                    }
-                    {
-                        answer &&
-                        <div className="ai-response">
-                            <h3>
-                                {t.assistant}
-                            </h3>
-                            <div className="medical-result">
-                                <p className="result-item">
-                                    <strong className="urgency">
-                                        {t.urgency}:
-                                    </strong>
-                                    {" "}
-                                    {answer.Urgency}
-                                </p>
-                                <p className="result-item">
-                                    <strong>
-                                        {t.reason}:
-                                    </strong>
-                                    {" "}
-                                    {answer.Reason}
-                                </p>
-                                <p className="result-item">
-                                    <strong>
-                                        {t.action}:
-                                    </strong>
-                                    {" "}
-                                    {answer.Action}
-                                </p>
+                        <div className="message ai">
+                            <div className="bubble">
+                                {t.thinking}
                             </div>
                         </div>
                     }
+
+
                 </div>
-                <form onSubmit={handleSubmit}>
-                    <div className="input-area">
-                        <textarea
-                            value={message}
-                            onChange={(e) =>
-                                setMessage(e.target.value)
-                            }
-                            placeholder={t.chatPlaceholder}
-                        />
-                        <button type="submit">
-                            {t.send}
-                        </button>
-                    </div>
+
+
+
+                <form
+                    className="input-area"
+                    onSubmit={handleSubmit}
+                >
+
+                    <textarea
+                        value={message}
+                        onChange={(e)=>setMessage(e.target.value)}
+                        placeholder={t.chatPlaceholder}
+                    />
+
+
+                    <button>
+                        ➤
+                    </button>
+
+
                 </form>
+
+
+
             </div>
+
         </div>
+
     );
+
 }
 
 export default Chat;

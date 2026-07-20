@@ -122,7 +122,9 @@ export const text = {
 
         action:
             "Action",
-
+            
+        welcomeMessage:
+            "Hello! I am AMAL AI, your medical assistant. Describe your symptoms and I will help assess the urgency of your situation."
     },
 
 
@@ -258,6 +260,9 @@ export const text = {
 
         action:
             "الإجراء المقترح",
+        
+        welcomeMessage:
+            "مرحباً! أنا أمل، مساعدك الطبي. اشرح أعراضك وسأساعدك في تقييم مستوى الاستعجال للحالة."
     }
 
 };
