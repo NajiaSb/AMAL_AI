@@ -18,7 +18,9 @@ def clean_json_response(text: str):
 # Sent prompt and question to LLM client
 def ask(prompt):
     response = client.chat.completions.create(
+        response_format={"type": "json_object"},
         model="llama-3.3-70b-versatile",
+        temperature=0, # set deterministic output
         messages=[
             {
                 "role":"system",
@@ -30,5 +32,4 @@ def ask(prompt):
             }
         ]
     )
-
     return clean_json_response(response.choices[0].message.content)
