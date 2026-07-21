@@ -111,17 +111,13 @@ function Chat() { // Main Chat component
     }
 
     return (
+        <div>
         <div className="chat-page">
             <div className="chat-card">
                 <div className="chat-header">
-                    <img
-                        className="bot-image"
-                        src={botLogo}
-                        alt="AMAL AI"
-                    />
 
                     <div className="bot-status">
-                        <h3>AMAL AI</h3>
+                        <h3>AMAL Chatbot</h3>
                         <p>{t.chatSubtitle}</p>
                     </div>
                 </div>
@@ -174,15 +170,28 @@ function Chat() { // Main Chat component
                     className="input-area"
                     onSubmit={handleSubmit}
                 >
-                    <textarea
+                        <textarea
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
+                        onKeyDown={(e) => {
+                            if (e.key === "Enter" && !e.shiftKey) {
+                                e.preventDefault(); // prevent newline
+                                handleSubmit(e);
+                            }
+                        }}
                         placeholder={t.chatPlaceholder}
                     />
 
                     <button type="submit">➤</button>
                 </form>
             </div>
+        </div>
+        <div>
+            <section className="disclaimer">
+                <h2>{t.disclaimerTitle}</h2>
+                <p>{t.disclaimer}</p>
+            </section>
+        </div>
         </div>
     );
 }

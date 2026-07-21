@@ -1,68 +1,95 @@
-.info-page{
-    max-width:1200px;
-    margin:auto;
-    padding:50px 30px;
-    direction:ltr;
+.info-page {
+    max-width: 70%;
+    margin: auto;
+    padding: 50px 30px;
+    direction: ltr;
+    background: var(--bg-secondary);
+    overflow: visible;
 }
 
-.info-header{
-    text-align:center;
-    padding:50px 20px;
+.info-header {
+    text-align: center;
+    padding: 50px 20px;
 }
 
-.info-header h1{
-    font-size:48px;
-    color:#1d6fa5;
-    margin-bottom:20px;
+.info-header h1 {
+    font-size: 48px;
+    color: var(--primary-dark);
+    margin-bottom: 20px;
 }
 
-.info-header p{
-    max-width:800px;
-    margin:15px auto;
-    color:#4b5563;
+.info-header p {
+    max-width: 800px;
+    margin: 15px auto;
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
 .info-card,
-.contact-card{
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
-    margin-bottom:25px;
+.contact-card {
+    background: var(--bg-color);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    margin-bottom: 25px;
 }
 
 .info-card h2,
 .info-card h3,
-.contact-card h3{
-    color:#1d6fa5;
+.contact-card h3 {
+    color: var(--primary-color);
 }
 
 .info-card p,
-.contact-card p{
-    color:#4b5563;
-    line-height:1.6;
+.contact-card p {
+    color: var(--text-light);
+    line-height: 1.6;
 }
 
-.contact-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-    direction:ltr;
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    direction: ltr;
 }
 
+/* Hover effect for cards */
+.info-card:hover,
+.contact-card:hover {
+    border-color: var(--primary-light);
+    box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+/* Arabic RTL support */
 .arabic .info-card,
-.arabic .contact-card{
-    direction:rtl;
-    text-align:right;
+.arabic .contact-card {
+    direction: rtl;
+    text-align: right;
 }
 
 .arabic .info-card p,
-.arabic .contact-card p{
-    direction:rtl;
-    text-align:right;
+.arabic .contact-card p {
+    direction: rtl;
+    text-align: right;
 }
 
-.arabic .info-header p{
-    direction:rtl;
-    text-align:center;
+.arabic .info-header p {
+    direction: rtl;
+    text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-header h1 {
+        font-size: 36px;
+    }
+
+    .info-page {
+        padding: 30px 20px;
+    }
 }

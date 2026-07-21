@@ -4,15 +4,17 @@
     padding: 0;
 }
 
-html, body, #root {
+html,
+body,
+#root {
     width: 100%;
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; 
+    overflow-x: clip;
     font-family: "Inter", "Arial", sans-serif;
-    background: #f7fafc;
-    color: #1f2937;
+    background: var(--bg-secondary);
+    color: var(--text-color);
 }
 
 a {
@@ -30,18 +32,42 @@ section {
     max-width: 1100px;
     margin: 40px auto;
     padding: 30px;
+    background: var(--bg-color);
 }
 
 h1 {
     font-size: 42px;
-    color: #1d6fa5;
+    color: var(--primary-dark);
 }
 
 h2 {
     margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+h3 {
+    color: var(--primary-color);
 }
 
 p {
     line-height: 1.7;
     margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+/* Form elements consistency */
+input,
+textarea {
+    font-family: inherit;
+    color: var(--text-color);
+}
+
+::placeholder {
+    color: var(--text-light);
+}
+
+/* Selection color */
+::selection {
+    background: var(--primary-light);
+    color: var(--primary-dark);
 }

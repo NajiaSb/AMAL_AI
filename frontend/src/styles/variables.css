@@ -1,0 +1,30 @@
+:root {
+    /* Primary brand colors */
+    --primary-color: #1d6fa5;
+    --primary-dark: #15567f;
+    --primary-light: #e8f3fa;
+
+    /* Secondary colors */
+    --secondary-color: #2a9d8f;
+
+    /* Background colors */
+    --bg-color: #ffffff;
+    --bg-secondary: #f8fafc;
+
+    /* Text colors */
+    --text-color: #374151;
+    --text-light: #6b7280;
+
+    /* UI colors */
+    --border-color: #e5e7eb;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+
+    /* Status colors */
+    --success-color: #22c55e;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+
+    /* Disclaimer */
+    --disclaimer-main-color: #d65656;
+    --disclaimer-color: #fae6e6;
+}

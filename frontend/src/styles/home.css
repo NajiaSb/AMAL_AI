@@ -2,14 +2,15 @@
     width: 100%;
     margin: 0;
     padding: 0;
+    background: var(--bg-color);
 }
 
 .hero {
     width: 100vw;
     height: 100vh;
-    max-width: 100% !important; 
-    margin: 0 !important;       
-    padding: 0 !important;      
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,28 +23,29 @@
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.45); /* Slight overlay for text readability */
+    background: rgba(255, 255, 255, 0.45);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 20px;
+    
 }
 
 .hero h2 {
-    font-size: 48px;
-    color: #1d6fa5;
-    max-width: 900px;
-    margin-bottom: 30px;
+    font-size: 4em;
+    color: var(--primary-dark);
+    max-width: 70%;
+    margin-bottom: 2%;
     font-weight: 600;
 }
 
 .start-button {
     display: inline-block;
     padding: 16px 40px;
-    background: #1d6fa5;
-    color: white;
+    background: var(--primary-color);
+    color: var(--bg-color);
     border-radius: 30px;
     font-size: 18px;
     text-decoration: none;
@@ -51,10 +53,11 @@
 }
 
 .start-button:hover {
-    background: #15567f;
+    background: var(--primary-dark);
 }
 
-/* SECTION 2: ABOUT PREVIEW (SECTION BELOW SCROLL) */
+
+/* SECTION 2: ABOUT PREVIEW */
 .about-preview {
     max-width: 1200px;
     margin: 100px auto;
@@ -70,17 +73,18 @@
     height: 450px;
     object-fit: cover;
     border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 25px var(--shadow-color);
 }
 
 .about-text p {
     font-size: 18px;
-    color: #4b5563;
+    color: var(--text-light);
     line-height: 1.8;
     margin-bottom: 25px;
 }
 
-/* SECTION 3: FEATURES & DISCLAIMER */
+
+/* SECTION 3: FEATURES */
 .features {
     max-width: 1200px;
     margin: 80px auto 0;
@@ -89,7 +93,7 @@
 
 .features h2 {
     text-align: center;
-    color: #1d6fa5;
+    color: var(--primary-color);
     margin-bottom: 40px;
 }
 
@@ -100,26 +104,47 @@
 }
 
 .feature-card {
-    background: white;
+    background: var(--bg-color);
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 20px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    transition: 0.2s ease;
+}
+
+.feature-card:hover {
+    border-color: var(--primary-light);
+    transform: translateY(-3px);
 }
 
 .feature-card h3 {
-    color: #1d6fa5;
+    color: var(--primary-color);
     margin-bottom: 15px;
 }
 
+
+/* DISCLAIMER */
 .disclaimer {
     max-width: 1200px;
     margin: 80px auto;
     padding: 30px;
-    background: #fff7ed;
+    background: var( --disclaimer-color);
     border-radius: 20px;
-    border-left: 5px solid #f59e0b;
+    border-left: 5px solid var(--disclaimer-main-color);
+    color: var(--text-color);
 }
 
+
+/* Arabic RTL support */
+.arabic .about-text,
+.arabic .feature-card,
+.arabic .disclaimer {
+    direction: rtl;
+    text-align: right;
+}
+
+
+/* Responsive */
 @media (max-width: 900px) {
     .hero h2 {
         font-size: 32px;

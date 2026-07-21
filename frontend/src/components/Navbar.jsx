@@ -12,8 +12,8 @@ function Navbar() {
         <nav>
             {} 
             <div className="logo"> 
-                <img src={logo} alt="AMAL AI Logo" className="navbar-logo-img" />
                 <span>AMAL AI</span>
+                <img src={logo} alt="AMAL AI Logo" className="navbar-logo-img" />
             </div>
 
             <div className="nav-links">
