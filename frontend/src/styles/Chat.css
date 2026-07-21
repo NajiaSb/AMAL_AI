@@ -4,20 +4,21 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background: linear-gradient(to right, #26333d, #323741, #21214e);
+    /* background: linear-gradient(to right, #26333d, #323741, #21214e); */
+    direction: ltr !important; 
 }
 
 .chat-card {
     width: 100%;
     max-width: 750px;
     height: 650px;
-    background: rgba(0,0,0,0.4);
+    background: rgba(31, 41, 55, 0.8);
     border-radius: 15px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    direction: ltr !important; 
 }
-
 
 .chat-header {
     padding: 20px;
@@ -26,31 +27,34 @@
     border-bottom: none;
 }
 
-
 .bot-image {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
+    object-fit: cover; 
     border: 2px solid white;
 }
 
+.avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover; 
+}
 
 .bot-status {
     margin-left: 15px;
     color: white;
 }
 
-
 .bot-status h3 {
     margin: 0;
 }
-
 
 .bot-status p {
     color: rgba(255,255,255,0.6);
     font-size: 13px;
 }
-
 
 .messages {
     flex: 1;
@@ -58,29 +62,18 @@
     overflow-y: auto;
 }
 
-
 .message {
     display: flex;
     margin-bottom: 20px;
 }
 
-
 .message.user {
     justify-content: flex-end;
 }
 
-
 .message.ai {
     justify-content: flex-start;
 }
-
-
-.avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-
 
 .bubble {
     padding: 12px 18px;
@@ -90,28 +83,33 @@
     color: white;
 }
 
+[dir="rtl"] .bubble {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="ltr"] .bubble {
+    direction: ltr;
+    text-align: left;
+}
 
 .user .bubble {
     background: #58cc71;
 }
 
-
 .ai .bubble {
     background: #52acff;
 }
 
-
 .bubble p {
     margin: 5px 0;
 }
-
 
 .input-area {
     padding: 15px;
     display: flex;
     gap: 10px;
 }
-
 
 .input-area textarea {
     flex: 1;
@@ -124,6 +122,15 @@
     padding: 15px;
 }
 
+[dir="rtl"] .input-area textarea {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="ltr"] .input-area textarea {
+    direction: ltr;
+    text-align: left;
+}
 
 .input-area button {
     width: 60px;
@@ -132,7 +139,6 @@
     color: white;
     border: none;
 }
-
 
 .input-area button:hover {
     background: rgba(255,255,255,0.2);

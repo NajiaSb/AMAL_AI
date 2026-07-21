@@ -1,7 +1,6 @@
 export const text = {
 
     en: {
-
         // Navbar
         home: "Home",
         chat: "Chat",
@@ -11,7 +10,7 @@ export const text = {
 
         // Home
         heroTitle: "AMAL AI",
-        heroSubtitle: "Your AI Medical Assistant for Accessible Healthcare Information",
+        heroSubtitle: "Your Personal AI Medical Assistant",
 
         heroDescription1:
             "AMAL AI is an AI-powered medical assistant designed to help users better understand their symptoms and determine the appropriate level of medical attention they may need.",
@@ -35,12 +34,10 @@ export const text = {
         step3Text:
             "Receive an urgency level together with recommended next steps.",
 
-        disclaimerTitle: "Medical Disclaimer",
+        disclaimerTitle: "Disclaimer",
 
         disclaimer:
-            "AMAL AI does not diagnose diseases and should not replace professional medical advice.",
-
-
+            "AMAL AI is an educational AI chatbot prototype designed to demonstrate the use of artificial intelligence in healthcare support. It is not a medical diagnostic tool and does not replace professional medical advice, diagnosis, or treatment. Users should always consult qualified healthcare professionals for medical decisions. AMAL AI and its developers are not responsible for any misuse of the system or reliance on its generated responses.",
         // About
 
         aboutTitle: "About AMAL AI",
@@ -83,22 +80,13 @@ export const text = {
         contactDescription:
             "Questions, suggestions, or feedback? We'd love to hear from you.",
 
-        emailTitle: "Email",
-
-        projectInfo: "Project Information",
-
-        projectName: "Project Name",
-
-        purpose: "Purpose",
-
-        languages: "Languages",
-
-        feedbackTitle: "Feedback",
-
-        feedback:
-            "Your feedback helps us improve AMAL AI.",
-
         //chat
+
+        urgencyLow: "Low 🟢",
+
+        urgencyMedium: "Medium 🟡",
+        
+        urgencyHigh: "High 🔴",
         
         chatTitle: "AMAL AI Medical Assistant",
 
@@ -124,9 +112,23 @@ export const text = {
             "Action",
             
         welcomeMessage:
-            "Hello! I am AMAL AI, your medical assistant. Describe your symptoms and I will help assess the urgency of your situation."
-    },
+            "Hello! I am AMAL AI, your medical assistant. Describe your symptoms and I will help assess the urgency of your situation.",
 
+        // Contact Form
+        title:"Title",
+
+        message:"Message",
+
+        emailPlaceholder:"Enter your email...",
+
+        titlePlaceholder:"Enter message title...",
+
+        messagePlaceholder:"Write your message...",
+
+        submit:"Submit",
+
+        successMessage:"Your message has been sent successfully."
+    },
 
     ar: {
 
@@ -138,11 +140,10 @@ export const text = {
         language: "English",
 
         // Home
-
         heroTitle: "AMAL AI",
 
         heroSubtitle:
-            "مساعدك الطبي الذكي للحصول على معلومات صحية بسهولة",
+            "مساعدك الطبي الشخصي بالذكاء الاصطناعي",
 
         heroDescription1:
             "أمل هو مساعد طبي يعمل بالذكاء الاصطناعي لمساعدة المستخدمين على فهم أعراضهم وتحديد مستوى الرعاية الطبية المناسب.",
@@ -169,11 +170,10 @@ export const text = {
         step3Text:
             "يعرض لك مستوى الاستعجال والخطوات المقترحة.",
 
-        disclaimerTitle: "إخلاء المسؤولية الطبية",
+        disclaimerTitle: "إخلاء المسؤولية:",
 
         disclaimer:
-            "لا يقوم أمل بتشخيص الأمراض ولا يغني عن استشارة الطبيب.",
-
+            "AMAL AI هو نموذج أولي لروبوت محادثة تعليمي يعمل بالذكاء الاصطناعي، وقد تم تصميمه لعرض استخدام تقنيات الذكاء الاصطناعي في دعم الرعاية الصحية. لا يعد أداة للتشخيص الطبي ولا يحل محل الاستشارات الطبية المتخصصة أو التشخيص أو العلاج من قبل المختصين. يجب على المستخدمين دائمًا استشارة متخصصي الرعاية الصحية المؤهلين عند اتخاذ أي قرارات طبية. لا يتحمل AMAL AI أو مطوروه مسؤولية أي استخدام غير صحيح للنظام أو الاعتماد على الردود التي يتم إنشاؤها بواسطة الذكاء الاصطناعي.",
 
         // About
 
@@ -219,23 +219,13 @@ export const text = {
 
         contactDescription:
             "يسعدنا استقبال أسئلتكم أو اقتراحاتكم أو ملاحظاتكم.",
-
-        emailTitle: "البريد الإلكتروني",
-
-        projectInfo: "معلومات المشروع",
-
-        projectName: "اسم المشروع",
-
-        purpose: "الهدف",
-
-        languages: "اللغات",
-
-        feedbackTitle: "الملاحظات",
-
-        feedback:
-            "ملاحظاتكم تساعدنا على تطوير أمل.",
         
         // Chat
+        urgencyLow: "منخفض 🟢",
+
+        urgencyMedium: "متوسط 🟡",
+        
+        urgencyHigh: "عالي 🔴",
 
         chatTitle:
             "المساعد الطبي AMAL AI",
@@ -262,7 +252,22 @@ export const text = {
             "الإجراء المقترح",
         
         welcomeMessage:
-            "مرحباً! أنا أمل، مساعدك الطبي. اشرح أعراضك وسأساعدك في تقييم مستوى الاستعجال للحالة."
+            "مرحباً! أنا أمل، مساعدك الطبي. اشرح أعراضك وسأساعدك في تقييم مستوى الاستعجال للحالة.",
+        
+        // Contact Form
+        title:"العنوان",
+
+        message:"الرسالة",
+
+        emailPlaceholder:"أدخل بريدك الإلكتروني...",
+
+        titlePlaceholder:"أدخل عنوان الرسالة...",
+
+        messagePlaceholder:"اكتب رسالتك...",
+
+        submit:"إرسال",
+
+        successMessage:"تم إرسال رسالتك بنجاح."
     }
 
 };

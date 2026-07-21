@@ -1,16 +1,47 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## How to Run the App
 
-Currently, two official plugins are available:
+### Install dependencies:
+`npm install`
+`npm install react-router-dom`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Start the React dev server:
+`npm run dev`
 
-## React Compiler
+(Opens locally at http://localhost:5173)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Make sure backend is running first
 
-## Expanding the Oxlint configuration
+`uvicorn main:app --reload`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## What Each File Does
+**App.jsx:** Sets up page routing (Home, Chat, About, Contact) and handles page language switching (English/Arabic).  
+
+**main.jsx:** The main entry point that renders the React app into the HTML.
+
+**translations.js:** Holds all the text in English and Arabic.  
+
+### components/
+
+**LanguageContext.jsx:** Global language state so any page can toggle between English and Arabic.  
+
+**Navbar.jsx:** Top bar with navigation links and the language toggle button.  
+
+### pages/
+
+**Home.jsx:** Main page with the header, quick overview, and safety disclaimer. 
+
+**Chat.jsx:** The main chat screen where users type symptoms, view conversation history, and see AI urgency results. 
+
+**About.jsx:** Page explaining our project mission and how the system works. 
+
+**Contact.jsx:** Page with a form where users can send feedback or messages. 
+
+### services/
+
+**api.js:** Handles the fetch POST request to our FastAPI backend (http://localhost:8000/chat) and formats conversation history.  
+
+### styles/
+
+**about.css, chat.css, contact.css, home.css, main.css, navbar.css:** CSS files for page styling and layout rules.

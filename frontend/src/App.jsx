@@ -14,11 +14,11 @@ function Layout() {
 
     const { language } = useLanguage();
 
-    useEffect(() => {
+    useEffect(() => { // Update the document's direction and language based on the selected language
         document.documentElement.dir =
             language === "ar" ? "rtl" : "ltr";
 
-        document.documentElement.lang = language;
+        document.documentElement.lang = language; 
     }, [language]);
 
     return (
@@ -27,8 +27,8 @@ function Layout() {
 
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/chat" element={<Chat />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/chat" element={<Chat />} />
                 <Route path="/contact" element={<Contact />} />
             </Routes>
         </>

@@ -1,0 +1,90 @@
+.contact-page{
+    max-width:900px;
+    margin:auto;
+    padding:60px 30px;
+}
+
+.contact-card{
+    background:white;
+    padding:50px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.contact-card h1{
+    text-align:center;
+    color:#1d6fa5;
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.contact-description{
+    text-align:center;
+    color:#4b5563;
+    margin-bottom:40px;
+}
+
+.contact-card form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.contact-card label{
+    color:#374151;
+    font-weight:600;
+    margin-top:15px;
+}
+
+.contact-card input,
+.contact-card textarea{
+    padding:15px;
+    border:2px solid #eeeeee;
+    border-radius:10px;
+    font-size:16px;
+    font-family:inherit;
+}
+
+.contact-card textarea{
+    height:150px;
+    resize:none;
+
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus{
+    outline:none;
+    border-color:#1d6fa5;
+}
+
+.contact-card button{
+    margin-top:25px;
+    padding:15px;
+    background:#1d6fa5;
+    color:white;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.contact-card button:hover{
+    background:#15567f;
+}
+
+.success-message{
+    margin-top:25px;
+    text-align:center;
+    color:#16a34a;
+    font-weight:bold;
+}
+
+.arabic .contact-card{
+    direction:rtl;
+    text-align:right;
+}
+
+
+.arabic .contact-card h1{
+    text-align:center;
+}

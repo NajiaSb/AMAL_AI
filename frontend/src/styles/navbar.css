@@ -9,9 +9,19 @@ nav {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-size: 24px;
     font-weight: bold;
     color: #1d6fa5;
+}
+
+.navbar-logo-img {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .nav-links {
