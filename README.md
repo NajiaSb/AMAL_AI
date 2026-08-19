@@ -11,6 +11,8 @@ The system uses a **Retrieval-Augmented Generation (RAG) pipeline** with a Large
 
 > **Disclaimer:** AMAL AI is an educational AI healthcare prototype. It is **not a medical diagnostic tool** and does not replace doctors, professional medical advice, diagnosis, or treatment.
 
+![Screenshot](./AMAL_AI_Poster.png)
+
 ---
 
 # Features
