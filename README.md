@@ -1,3 +1,5 @@
+![Screenshot](./AMAL_AI_Poster.png)
+
 # AMAL AI
 ### AI Medical Assistant for Accessible Healthcare Support
 
@@ -10,8 +12,6 @@ The system uses a **Retrieval-Augmented Generation (RAG) pipeline** with a Large
 - Find guidance on when to seek professional medical care
 
 > **Disclaimer:** AMAL AI is an educational AI healthcare prototype. It is **not a medical diagnostic tool** and does not replace doctors, professional medical advice, diagnosis, or treatment.
-
-![Screenshot](./AMAL_AI_Poster.png)
 
 ---
 
